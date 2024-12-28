@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Button Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            background-image: url('ex.gif'); /* Replace with your GIF URL */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the GIF */
+        }
+
+        .header {
+            text-align: center;
+            color: black; /* Change text color to black */
+            position: relative; /* Make sure text is above the background */
+            z-index: 1; /* Ensure header is above the background */
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: monospace; /* Monospace font for console effect */
+            font-size: 36px; /* Font size for heading */
+            margin-bottom: 10px; /* Space between heading and developer line */
+        }
+
+        #developer {
+            cursor: pointer;
+            color: black; /* Change text color to black */
+            text-decoration: underline;
+            font-family: monospace; /* Monospace font for console effect */
+        }
+
+        /* Button styling */
+        .button {
+            height: 50px;
+            width: 200px;
+            position: relative;
+            background-color: transparent;
+            cursor: pointer;
+            border: 2px solid #252525;
+            overflow: hidden;
+            border-radius: 30px;
+            color: #333;
+            transition: all 0.5s ease-in-out;
+            margin-bottom: 20px; /* Space between buttons */
+        }
+
+        .btn-txt {
+            z-index: 1;
+            font-weight: 800;
+            letter-spacing: 4px;
+        }
+
+        .type1::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all 0.5s ease-in-out;
+            background-color: #333;
+            border-radius: 30px;
+            visibility: hidden;
+            height: 10px;
+            width: 10px;
+            z-index: -1;
+        }
+
+        .button:hover {
+            box-shadow: 1px 1px 200px #252525;
+            color: #fff;
+            border: none;
+        }
+
+        .type1:hover::after {
+            visibility: visible;
+            transform: scale(100) translateX(2px);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+            justify-content: space-evenly; /* Evenly space buttons */
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px; /* Smaller heading on small screens */
+            }
+
+            .button {
+                width: 150px; /* Smaller button size for mobile */
+                height: 45px; /* Smaller height for mobile */
+            }
+        }
+
+        /* Media query for very small screens (e.g. mobile portrait) */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px; /* Even smaller heading on very small screens */
+            }
+
+            .button {
+                width: 120px; /* Even smaller button size for mobile portrait */
+                height: 40px; /* Even smaller height for mobile portrait */
+            }
+        }
+    </style>
+</head>
+<body onload="init()">
+    <div class="header">
+        <h1>Welcome to Memory Card Game</h1>
+        <p id="developer" onclick="redirectToGitHub()">Developed by Ghanshyamsinh Zala</p>
+    </div>
+    <div class="button-container">
+        <button class="button type1" onclick="location.href='https://example.com/link1'">
+            <span class="btn-txt">Timely Mode</span>
+        </button>
+        <button class="button type1" onclick="location.href='https://example.com/link2'">
+            <span class="btn-txt">Chill Mode</span>
+        </button>
+    </div>
+    <script>
+        function init() {
+            // Any initialization code can go here
+        }
+
+        function redirectToGitHub() {
+            window.open('https://github.com/yourusername', '_blank');
+        }
+    </script>
+</body>
+</html>
