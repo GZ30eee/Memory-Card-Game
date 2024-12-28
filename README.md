@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/7f97a019-d892-4b73-a3b9-436736e14dd0)
+![image](https://github.com/user-attachments/assets/63b5eea2-f1b7-4fb9-a850-aed2fe520e3b)
 
 # Memory Card Game
 
